@@ -37,7 +37,7 @@ def INTENSITY(f, T, N0, paths):
 def PHOTOIONIZATION_PER_FREQUENCY(f, T, N0, paths):
     bound_free_coefficient = BOUND_FREE_ABSORPTION_COEFFICIENT(f, N0)
 
-    ionization_rate = bound_free_coefficient * INTENSITY(f, T, N0, paths) / (constants.h * f) * 4**2 * np.pi
+    ionization_rate = bound_free_coefficient * INTENSITY(f, T, N0, paths) / (constants.h * f) * 4**2 * np.pi**2
     return ionization_rate
 
 def PHOTOIONIZATION(T, N0, paths):

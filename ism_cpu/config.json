@@ -1,8 +1,8 @@
 {
-    "timestep": 31556995200e-1,
-    "n": 500,
+    "timestep": 31556995200e0,
+    "n": 50,
     "cell_edge": 2e18,
-    "stellar_surf_temp": 3e4,
+    "stellar_surf_temp": 3.3e4,
     "stellar_radius": 6.957e10,
     "hydrogen_density": 1e0,
     "grid_edge": 51
