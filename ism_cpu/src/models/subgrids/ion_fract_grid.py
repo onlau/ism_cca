@@ -13,7 +13,7 @@ class ION_FRACT_GRID(grid):
         new = self.cells + (change * config.TIMESTEP) / config.HYDROGEN_DENSITY
 
         # Lähde https://casper.berkeley.edu/astrobaki/index.php/Recombination_Coefficients
-        dp = 1 / (self.automaton.grids[3].cells * self.cells * self.automaton.grids[1].cells)
+        dp = 1 / (self.automaton.grids[3].cells * self.cells * self.automaton.grids[1].cells)#np.where(self.cells == 0, 0, 1 / (self.automaton.grids[3].cells * self.cells * self.automaton.grids[1].cells))
 
         damped = new + (self.cells - new) * np.exp(-dp * config.TIMESTEP)
         return np.clip(damped, 0, 1)

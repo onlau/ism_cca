@@ -1,5 +1,5 @@
 __pycache__/
+*test*
 *cuda/
 *cuda*
 *.png
-*.json

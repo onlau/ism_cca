@@ -6,7 +6,7 @@ import numpy as np
 
 class PHOTOIONIZATION_GRID(grid):
     def setup(self):
-        self.cells = np.zeros_like(self.cells)
+        self.cells = np.zeros_like(self.cells)#rad_func.PHOTOIONIZATION(config.STAR_SURFACE_TEMP, self.automaton.grids[1].cells, self.automaton.shortest_paths)
     
     def update(self):
         unionized = self.automaton.grids[1].cells * (1 - self.automaton.grids[4].cells)     # ionisoitumattomat atomit = vedyn tiheys-(1-ionisaatioaste)

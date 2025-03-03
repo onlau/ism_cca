@@ -1,7 +1,7 @@
 {
-    "timestep": 31556995200e0,
+    "timestep": 315569952e2,
     "n": 500,
-    "cell_edge": 2e18,
+    "cell_edge": 1.5e18,
     "stellar_surf_temp": 3e4,
     "stellar_radius": 6.957e10,
     "hydrogen_density": 1e0,

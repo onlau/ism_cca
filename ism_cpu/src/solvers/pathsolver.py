@@ -72,6 +72,6 @@ def find_paths():
         while next_node != source:
             path.append(next_node)
             next_node = prev[next_node]
-        paths[node] = path
+        paths[node] = (path, dist[node])
         
     return paths
