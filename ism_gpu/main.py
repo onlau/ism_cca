@@ -1,5 +1,5 @@
 import argparse
-from src.models.cuda_automaton import automaton, update_automaton
+from src.automaton.automaton import automaton, update_automaton
 from src.utils.plotters import plot_ion_fraction, animate_cupy_array
 
 def main():

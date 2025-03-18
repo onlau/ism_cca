@@ -1,6 +1,5 @@
 from bidict import bidict
 
-
 grid_map = bidict({
         "density": 0,
         "photoionization": 1,

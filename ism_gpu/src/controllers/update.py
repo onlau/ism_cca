@@ -1,4 +1,4 @@
-from src.controllers.mappings import param_map, grid_map
+from src.mappings.mappings import param_map, grid_map
 from src.utils.setuputils import setup_params as params
 import cupy as cp
 import src.solvers.radiation_solver as rs

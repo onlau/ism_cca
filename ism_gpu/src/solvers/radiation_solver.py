@@ -1,5 +1,5 @@
 import cupy as cp
-from src.controllers.mappings import param_map as pm
+from src.mappings.mappings import param_map as pm
 from src.utils.setuputils import setup_params as p
 from src.solvers.pathsolver import paths
 from src.solvers.distsolver import dist

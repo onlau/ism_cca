@@ -1,7 +1,7 @@
 import json
 import cupy as cp
 from pathlib import Path
-from src.controllers.mappings import param_map as pm
+from src.mappings.mappings import param_map as pm
 from scipy.integrate import quad
 import numpy as np
 

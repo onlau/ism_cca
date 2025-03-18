@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib.ticker as ticker
 from scipy.integrate import quad
-from src.controllers.mappings import param_map as pm
+from src.mappings.mappings import param_map as pm
 from src.utils.setuputils import setup_params as p
 from matplotlib.ticker import FuncFormatter
 

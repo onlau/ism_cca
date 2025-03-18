@@ -1,4 +1,4 @@
-from src.controllers.mappings import param_map
+from src.mappings.mappings import param_map
 import src.solvers.radiation_solver as rs
 from src.utils.setuputils import setup_params
 

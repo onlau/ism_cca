@@ -1,5 +1,4 @@
-# HII-alueiden mallinnus
-Malli tuottaa etäisyys-ionisaatioaste-kuvaajan, jossa punainen viiva on Strömgrenin säde.
+# HII-alueiden mallinnus python-ohjelmalla
 Alustusparametrit annettava config.json-tiedostossa cgs-yksiköissä (lämpötilat absoluuttisella asteikolla).
 
 ## **Parametrit:**
