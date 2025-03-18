@@ -5,7 +5,7 @@ from src.utils.plotters import plot_ion_fraction, animate_cupy_array
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", "--animate", action="store_true", help="Piirrä animaatio")
-    parser.add_argument("-d", "--plot", action="store_true", help="Piirrä kuvaaja")
+    parser.add_argument("-p", "--plot", action="store_true", help="Piirrä kuvaaja")
     args = parser.parse_args()
     
     if args.animate:
