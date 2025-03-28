@@ -62,7 +62,7 @@ def plot_ion_fraction(a, update_func):
     ax.set_ylim(0, 1.2)
     plt.show()
 
-def animate_cupy_array(array, update_func, frames=100, interval=50):
+def draw_animation(array, update_func, frames=100, interval=50):
     array = cp.asarray(array)
     fig, ax = plt.subplots()
     
@@ -84,3 +84,20 @@ def animate_cupy_array(array, update_func, frames=100, interval=50):
     plt.show()
     
     return ani
+
+def update_then_draw(a, update_func):
+    for _ in range(n):
+        update_func(a)
+
+    fig, ax = plt.subplots()
+
+    ax.xaxis.set_major_formatter(ticker.FuncFormatter(cells_to_pc))
+    ax.yaxis.set_major_formatter(ticker.FuncFormatter(cells_to_pc))
+    
+    img = ax.imshow(cp.asnumpy(a[3]), cmap='viridis', animated=True, vmin = 0, vmax = 1)
+        
+    ax.set_title(f"T = {st} K, aika-askel = {ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
+    cb = fig.colorbar(img, ax=ax)
+    cb.set_label("Ionisaatioaste")
+
+    plt.show()
