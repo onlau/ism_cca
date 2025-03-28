@@ -25,11 +25,15 @@ Suoritus:
 ```
 python3 main.py --animate
 ```
-piirtää animaation,
+piirtää animaation.
 ```
 python3 main.py --plot
 ```
 piirtää kuvaajan.
+```
+python3 main.py --draw
+```
+suorittaa simulaatiota n aika-askelen verran ja piirtää kuvan alueesta.
 
 Simulaatio on hyvin herkkä aika-askelen pituudelle, sopiva pituus näyttäisi riippuvan lähinnä vedyn hiukkastiheydestä. Siksi cpu-versiossa mukana olleet timestep ja cell_edge - parametrit on poistettu config.json-tiedostosta, ne skaalataan nyt automaattisesti ohjelman sisällä. Punainen viiva kuvaajissa on Strömgrenin säde.
 
