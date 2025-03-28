@@ -87,6 +87,7 @@ def draw_animation(array, update_func, frames=100, interval=50):
 
 def update_then_draw(a, update_func):
     for _ in range(n):
+        print(_)
         update_func(a)
 
     fig, ax = plt.subplots()
