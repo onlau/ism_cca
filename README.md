@@ -1,4 +1,4 @@
-# HII-alueiden mallinnus python-ohjelmalla
+# HII-alueiden mallinnus
 Alustusparametrit annettava config.json-tiedostossa cgs-yksiköissä (lämpötilat absoluuttisella asteikolla).
 
 ## **Parametrit:**
