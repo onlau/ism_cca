@@ -11,18 +11,19 @@ def photoionization(T, N0):
     k = p[pm["k_B"]].item()
     ll = p[pm["lyman_limit"]].item()
     g = p[pm["gaunt_factor"]].item()
+    ce = p[pm["cell_edge"]].item()
     sr = p[pm["stellar_radius"]].item()      
 
     def find_od(f): 
-        bf = 2.81e29 * g * f**-3 * paths * N0.astype(cp.float64)
+        bf = 2.81e29 * f**-3 * paths * N0.astype(cp.float64) * g
         cumulative_bf = cp.sum(bf, axis = (-1, -2))
         valid_count = cp.sum(paths, axis = (-1, -2))
         avg_bf = cp.where(valid_count > 0, cumulative_bf / valid_count, 0)
 
-        return avg_bf * dist
+        return cumulative_bf * ce
     
     def const():
-        num = 2.81e29 * N0 * g * cp.pi * 2
+        num = 6e-18 * 2 * cp.pi**2 * ll**3 * N0 * g
         den = c**2
         W = cp.where(dist == 0, 4 * cp.pi, (sr / dist)**2)
         return W * num / den
@@ -39,4 +40,4 @@ def photoionization(T, N0):
 
 
 def recombination_coeff(): 
-    return 2.6e-13
+    return 4e-13

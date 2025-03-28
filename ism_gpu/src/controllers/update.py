@@ -8,7 +8,7 @@ def update_density(a):
     return d
 
 def update_photoionization(a):
-    unionized = (1 - a[grid_map["ion_fract"]])
+    unionized = (1 - a[grid_map["ion_fract"]]) * a[grid_map["density"]]
     p = rs.photoionization(params[param_map["stellar_surf_temp"]].item(), unionized)
     return p
 
