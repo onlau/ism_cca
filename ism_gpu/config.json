@@ -1,7 +1,7 @@
 {
     "stellar_surf_temp": 3e4,
     "stellar_radius": 6.957e10,
-    "hydrogen_density":1e2,
+    "hydrogen_density": 1e2,
     "grid_edge": 55,
     "hydrogen_temperature": 1e4,
     "n": 100

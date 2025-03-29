@@ -87,18 +87,23 @@ def draw_animation(array, update_func, frames=100, interval=50):
 
 def update_then_draw(a, update_func):
     for _ in range(n):
-        print(_)
         update_func(a)
 
-    fig, ax = plt.subplots()
+    fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+    titles = ["Hiukkastiheys (cm⁻³)", "Ionisaatioaste"]
+    indices = [0, 3]
+    mins = [0, 0]
+    maxes = [1e2, 1]
+    maps = ["inferno", "viridis"]
 
-    ax.xaxis.set_major_formatter(ticker.FuncFormatter(cells_to_pc))
-    ax.yaxis.set_major_formatter(ticker.FuncFormatter(cells_to_pc))
-    
-    img = ax.imshow(cp.asnumpy(a[3]), cmap='viridis', animated=True, vmin = 0, vmax = 1)
+    for ax, title, idx, mi, ma, map in zip(axes, titles, indices, mins, maxes, maps):
+        ax.xaxis.set_major_formatter(ticker.FuncFormatter(cells_to_pc))
+        ax.yaxis.set_major_formatter(ticker.FuncFormatter(cells_to_pc))
         
-    ax.set_title(f"T = {st} K, aika-askel = {ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
-    cb = fig.colorbar(img, ax=ax)
-    cb.set_label("Ionisaatioaste")
+        ax.set_title(title)
+        img = ax.imshow(cp.asnumpy(a[idx]), cmap=map, animated=True, vmin=mi, vmax=ma)
+        cb = fig.colorbar(img, ax=ax)
+        
+    fig.suptitle(f"{title}, T = {st} K, def = {ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
 
     plt.show()
