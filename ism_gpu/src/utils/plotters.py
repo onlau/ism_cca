@@ -104,6 +104,6 @@ def update_then_draw(a, update_func):
         img = ax.imshow(cp.asnumpy(a[idx]), cmap=map, animated=True, vmin=mi, vmax=ma)
         cb = fig.colorbar(img, ax=ax)
         
-    fig.suptitle(f"{title}, T = {st} K, def = {ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
+    fig.suptitle(f"{title}, T = {st} K, aika-askel = {ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
 
     plt.show()
