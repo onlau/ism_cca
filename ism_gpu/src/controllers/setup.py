@@ -1,9 +1,12 @@
 from src.mappings.mappings import param_map
 import src.solvers.radiation_solver as rs
 from src.utils.setuputils import setup_params
+from src.distributions import distributions
 
 def setup_density(a):
     a *= setup_params[param_map["hydrogen_density"]]
+    #distributions.isotropic_from_center(a)
+    #distributions.filament(a)
 
 def setup_photoionization(a):
     a *= 0
