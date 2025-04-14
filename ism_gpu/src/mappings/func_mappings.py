@@ -1,6 +1,6 @@
 from bidict import bidict
-import src.controllers.setup as s
-import src.controllers.update as u
+import src.state_controllers.setup as s
+import src.state_controllers.update as u
 
 setup_map = bidict({
         "density": s.setup_density,

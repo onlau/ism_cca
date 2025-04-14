@@ -15,8 +15,11 @@ def photoionization(T, N0):
     sr = p[pm["stellar_radius"]].item()      
 
     def find_od(f): 
-        bf = 6e-18 * (ll/f)**3 * N0 * g * paths
+        bf = 2.81e29 * f**-3 * paths * N0.astype(cp.float64) * g
+        #bf = 6e-18 * (ll/f)**3 * N0 * paths
+        #int_bf = cp.sum(bf, axis = -1)
         cumulative_bf = cp.sum(bf, axis = (-1, -2))
+        #int_vc = cp.sum(paths, axis = -1)
         valid_count = cp.sum(paths, axis = (-1, -2))
         avg_bf = cp.where(valid_count > 0, cumulative_bf / valid_count, 0)
 
@@ -24,6 +27,7 @@ def photoionization(T, N0):
     
     def const():
         num = 6e-18 * 2 * cp.pi**2 * ll**3 * N0 * g
+        #num = 2.81e29 * N0 * g * cp.pi**2 * 2
         den = c**2
         W = cp.where(dist == 0, 4 * cp.pi, (sr / dist)**2)
         return W * num / den

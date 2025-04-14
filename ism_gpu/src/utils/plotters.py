@@ -48,7 +48,7 @@ def plot_ion_fraction(a, update_func):
 
     plt.xlabel("r (pc)")
     plt.ylabel("ionisaatioaste")
-    plt.title(f"T = {st} K, aika-askel = {ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
+    plt.title(f"T = {st} K, t = {n * ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
 
     # teoreettisen ratkaisun mukainen raja
     s = stromgren()
@@ -76,7 +76,7 @@ def draw_animation(array, update_func, frames=100, interval=50):
         img.set_array(cp.asnumpy(array[3]))
         return img,
     
-    ax.set_title(f"T = {st} K, aika-askel = {ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
+    ax.set_title(f"T = {st} K, t = {n * ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
     cb = fig.colorbar(img, ax=ax)
     cb.set_label("Ionisaatioaste")
 
@@ -104,6 +104,6 @@ def update_then_draw(a, update_func):
         img = ax.imshow(cp.asnumpy(a[idx]), cmap=map, animated=True, vmin=mi, vmax=ma)
         cb = fig.colorbar(img, ax=ax)
         
-    fig.suptitle(f"{title}, T = {st} K, aika-askel = {ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
+    fig.suptitle(f"{title}, T = {st} K, t = {n * ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
 
     plt.show()

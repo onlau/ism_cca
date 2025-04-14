@@ -1,8 +1,8 @@
 from src.mappings.mappings import grid_map, param_map
 from src.mappings.func_mappings import setup_map, update_map
 from src.utils.setuputils import setup_params as params
-from src.controllers.setup import *
-from src.controllers.update import *
+from src.state_controllers.setup import *
+from src.state_controllers.update import *
 import cupy as cp
 
 def automaton_setup():

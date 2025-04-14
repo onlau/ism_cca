@@ -37,7 +37,7 @@ def load_params():
 
     u["cell_edge"] = total_diameter / u["grid_edge"]
     default_timestep = 31556995200e0
-    u["timestep"] = default_timestep / u["hydrogen_density"]
+    u["timestep"] = default_timestep / u["hydrogen_density"] * 0.05
 
     sorted_u = dict(sorted(u.items(), key = lambda i:pm[i[0]]))
 
