@@ -76,7 +76,7 @@ def draw_animation(array, update_func, frames=100, interval=50):
         img.set_array(cp.asnumpy(array[3]))
         return img,
     
-    ax.set_title(f"T = {st} K, t = {n * ts / 31556995.2:.2f} a, Nₕ = {dens} cm⁻³")
+    ax.set_title(f"T = {st} K, Nₕ = {dens} cm⁻³")
     cb = fig.colorbar(img, ax=ax)
     cb.set_label("Ionisaatioaste")
 
@@ -87,6 +87,7 @@ def draw_animation(array, update_func, frames=100, interval=50):
 
 def update_then_draw(a, update_func):
     for _ in range(n):
+        print(_)
         update_func(a)
 
     fig, axes = plt.subplots(1, 2, figsize=(10, 5))

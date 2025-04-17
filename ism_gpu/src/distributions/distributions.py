@@ -2,12 +2,10 @@ import cupy as cp
 from src.solvers.distsolver import dist
 
 def isotropic_from_center(a):
-    ma = 1000
+    ma = 100
 
-    dm = cp.where(dist / cp.max(dist) != 0, dist / cp.max(dist) * ma, 1)
+    dm = cp.where(dist / cp.max(dist) != 0, (1 - dist/ cp.max(dist) + 1e-20) * ma, 1)
     a *= dm
-
-
 
 def filament(a):
     mi = 10
