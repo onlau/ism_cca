@@ -5,10 +5,10 @@ from src.utils.setuputils import setup_params
 from src.distributions import distributions
 
 def setup_density(a):
-    a *= setup_params[param_map["hydrogen_density"]]
+    #a *= setup_params[param_map["hydrogen_density"]]
     #distributions.isotropic_from_center(a)
-    #distributions.filament(a)
-    #print(cp.mean(a))
+    distributions.filament(a)
+    print(cp.mean(a))
 
 def setup_photoionization(a):
     a *= 0
