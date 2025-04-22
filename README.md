@@ -31,4 +31,6 @@ piirtää kuvaajan.
 ```
 python3 main.py --draw
 ```
-suorittaa simulaatiota n aika-askelen verran ja piirtää kuvan alueesta.
+suorittaa simulaatiota n aika-askelen verran ja piirtää kuvat ionisaatioasteesta ja hiukkastiheydestä.
+
+`-i` ja `-f` simuloivat isotrooppista epähomogeenista jakaumaa ja filamentin sisällä sijaitsevan tähden aikaansaamaa jakaumaa.

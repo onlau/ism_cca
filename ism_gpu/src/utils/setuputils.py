@@ -33,7 +33,7 @@ def load_params():
         luminosity = u["stellar_radius"]**2 * np.pi * 4 * int
         return np.cbrt(3 * luminosity / (4 * np.pi * u["hydrogen_density"] ** 2 * 2.6e-13))
 
-    total_diameter = 3 * stromgren()  # Tässä voi kerrointa muokkaamalla muuttaa tarkasteltavan alueen kokoa
+    total_diameter = 3 * stromgren() * 1.3 # Tässä voi kerrointa muokkaamalla muuttaa tarkasteltavan alueen kokoa
 
     u["cell_edge"] = total_diameter / u["grid_edge"]
     default_timestep = 31556995200e0

@@ -19,7 +19,6 @@ e = p[pm["grid_edge"]].item()
 sr = p[pm["stellar_radius"]].item()
 st = p[pm["stellar_surf_temp"]].item()
 dens = p[pm["hydrogen_density"]].item()
-ts = p[pm["timestep"]].item()
 n = int(p[pm["n"]].item())
 
 def ionizing_photons(f, T):
@@ -34,6 +33,7 @@ def cells_to_pc(c, pos):
     return f"{c * 3.240756e-19 * ce:.2f}"
 
 def plot_ion_fraction(a, update_func):
+    ts = p[pm["timestep"]].item()
     for _ in range(n):
         print(_)
         update_func(a)
@@ -86,6 +86,8 @@ def draw_animation(array, update_func, frames=100, interval=50):
     return ani
 
 def update_then_draw(a, update_func):
+    ts = p[pm["timestep"]].item()
+    
     for _ in range(n):
         print(_)
         update_func(a)
